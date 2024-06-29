@@ -68,16 +68,26 @@ consumePromiseFive = async () => {
 
 consumePromiseFive()
 
-getAllUsers = async () => {
-    try {
-        const userData = fetch('https://jsonplaceholder.typicode.com/users')
-        const response = await userData
-        const data = await response.json()
-        console.log(data)
-    } catch (error) {
-        console.log("E: ", error)
-    }
+// getAllUsers = async () => {
+//     try {
+//         const userData = fetch('https://jsonplaceholder.typicode.com/users')
+//         const response = await userData
+//         const data = await response.json()
+//         console.log(data)
+//     } catch (error) {
+//         console.log("E: ", error)
+//     }
    
-}
+// }
 
-getAllUsers()
+// getAllUsers()
+
+fetch('https://jsonplaceholder.typicode.com/users')
+.then((response) => {
+    return response.json()
+}).then((data) => {
+    console.log(data)
+})
+.catch((error) => {
+    console.log('Unable to fetch data')
+})
