@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>JavaScript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+
+    <script>
+        
+        // let sec = setInterval(() => {
+        //     let time = new Date()
+        //     time.getSeconds()
+        // }, 1000);
+
+
+        let strtBtn = document.querySelector("#start")
+        let stpBtn = document.querySelector("#stop")
+
+        let printStr = (str) => {
+            
+            console.log(str, Date.now());
+        }
+
+
+        strtBtn.addEventListener('click', () => {
+
+            intervalId = setInterval(printStr, 1000, 'Interval is running...');
+        })
+
+        stpBtn.addEventListener('click', () => {
+            clearInterval(intervalId);
+            console.log('Interval has been Stopped...')
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit and remove element in dom</title>
+</head>
+<body>
+
+        <ul class="language">
+            <li>Html</li>
+            <li>Javascript</li>
+            <li>Python</li>
+        </ul>
+  
+
+    <script>
+        addLang = (langName) => {
+            const li = document.createElement("li")
+            li.innerHTML = `${langName}`
+            document.querySelector('.language').appendChild(li)
+        }
+        addLang("java")
+
+        addOptiLang = (langName) => {
+            const li = document.createElement("li")
+            li.appendChild(document.createTextNode(langName))
+            document.querySelector('.language').appendChild(li)
+        }
+        addOptiLang('typescript')
+        
+        console.log(document.querySelector('.language'))
+
+        editLang = () => {
+            let edit = document.querySelector('li:first-child')
+            // edit.textContent = "C++"
+            
+            let newli = document.createElement('li')
+            newli.textContent = 'donNet'
+            edit.replaceWith(newli)
+        }
+        editLang()
+
+        deleteLang = () => {
+            let deleteLang = document.querySelector('li:nth-child(2)')
+            deleteLang.remove
+        }
+        deleteLang()
+    </script>
+</body>
+</html>
