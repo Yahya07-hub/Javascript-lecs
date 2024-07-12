@@ -38,10 +38,21 @@ function user(username, password, followers){
 }
 
 const userOne = new user('Yahya', 123456, 1300)
+console.log(userOne);
 const userTwo = new user('Araf', 1234, 951)
+console.log(userTwo);
 console.log(userOne.greeting());
 console.log(userTwo.constructor);
 console.log(userOne instanceof user)
 // constructor hota h Refrence hoti h khud hi ke bare me
 
 
+function greeting(name, age) {
+
+    this.name = name
+    this.age = age
+    console.log(`Hello ${name} you are ${age} years old`);
+    
+}
+greeting('Yahya', 20);
+// console.log(greet)
